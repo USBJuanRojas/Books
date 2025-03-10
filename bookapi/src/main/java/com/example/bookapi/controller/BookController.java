@@ -2,16 +2,17 @@ package com.example.bookapi.controller;
 
 import com.example.bookapi.entity.Book;
 import com.example.bookapi.service.BookService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/books")
-@AllArgsConstructor
 public class BookController {
-    private final BookService service;
+
+    @Autowired
+    private BookService service;
 
     @GetMapping
     public List<Book> getAllBooks() {

@@ -2,16 +2,17 @@ package com.example.bookapi.service;
 
 import com.example.bookapi.entity.Book;
 import com.example.bookapi.repository.BookRepository;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
 public class BookService {
-    private final BookRepository repository;
+
+    @Autowired
+    private BookRepository repository;
 
     public List<Book> findAll() {
         return repository.findAll();
